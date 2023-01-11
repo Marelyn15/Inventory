@@ -1,0 +1,5 @@
+c:\users\mdesc\onedrive\documents\visual studio 2012\Projects\Inventory\Inventory\bin\Debug\Inventory.exe
+c:\users\mdesc\onedrive\documents\visual studio 2012\Projects\Inventory\Inventory\bin\Debug\Inventory.pdb
+c:\users\mdesc\onedrive\documents\visual studio 2012\Projects\Inventory\Inventory\obj\Debug\Inventory.csprojResolveAssemblyReference.cache
+c:\users\mdesc\onedrive\documents\visual studio 2012\Projects\Inventory\Inventory\obj\Debug\Inventory.exe
+c:\users\mdesc\onedrive\documents\visual studio 2012\Projects\Inventory\Inventory\obj\Debug\Inventory.pdb
