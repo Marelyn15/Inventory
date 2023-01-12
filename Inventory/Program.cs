@@ -26,346 +26,351 @@ namespace Inventory
                 int numberAnswer = int.Parse(answer);
                 if (numberAnswer == 1)
                 {
-                       bool continuarSecondMenu = true;
-                       while (continuarSecondMenu) {
+                    bool continuarSecondMenu = true;
+                    while (continuarSecondMenu)
+                    {
 
-                           Console.WriteLine("COMPRAS");
-                           SqlCommand cmd = connection.CreateCommand();
+                        Console.WriteLine("COMPRAS");
+                        SqlCommand cmd = connection.CreateCommand();
 
-                           cmd.CommandText = "SELECT * FROM PURCHASE";
-                           SqlDataReader reader = cmd.ExecuteReader();
-                           if (reader.HasRows)
-                           {
-                               while (reader.Read())
-                               {
-                                   Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}", reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetDateTime(4));
-                               }
+                        cmd.CommandText = "SELECT * FROM PURCHASE_VIEW;";
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetDateTime(4));
+                            }
 
-                           }
+                        }
 
-                           reader.Close();
+                        reader.Close();
 
-                           //Otro menu
-                           Console.WriteLine("Que desas hacer? 1. Crear nuevo registro (C), 2. Actualizar nuevo registro (U) 3. Eliminar registro (D)");
-                           var crudAnswer = Console.ReadLine();
+                        //Otro menu
+                        Console.WriteLine("Que desas hacer? 1. Crear nuevo registro (C), 2. Actualizar nuevo registro (U) 3. Eliminar registro (D)");
+                        var crudAnswer = Console.ReadLine();
 
-                           //Entrada de datos
+                        //Entrada de datos
 
 
 
-                           Console.WriteLine("Desea continuar? (Y/n) ");
-                           var secondMenuAnswer = Console.ReadLine();
+                        Console.WriteLine("Desea continuar? (Y/n) ");
+                        var secondMenuAnswer = Console.ReadLine();
 
-                           if (secondMenuAnswer == "Y")
-                           {
-                               continuarSecondMenu = true;
-                           }
-                           else if (secondMenuAnswer == "n")
-                           {
-                               continuarSecondMenu = false;
-                           }
-                           else
-                           {
-                               Console.WriteLine("Letra equivocada");
-                               continuarSecondMenu = false;
-                           }
-                       }
-                    
+                        if (secondMenuAnswer == "Y")
+                        {
+                            continuarSecondMenu = true;
+                        }
+                        else if (secondMenuAnswer == "n")
+                        {
+                            continuarSecondMenu = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Letra equivocada");
+                            continuarSecondMenu = false;
+                        }
+                    }
+
 
                 }
                 else if (numberAnswer == 2)
                 {
-                     bool continuarSecondMenu = true;
-                       while (continuarSecondMenu) {
+                    bool continuarSecondMenu = true;
+                    while (continuarSecondMenu)
+                    {
 
-                           Console.WriteLine("EMPLEADOS");
-                           SqlCommand cmd = connection.CreateCommand();
+                        Console.WriteLine("EMPLEADOS");
+                        SqlCommand cmd = connection.CreateCommand();
 
-                           cmd.CommandText = "SELECT * FROM EMPLOYEES";
-                           SqlDataReader reader = cmd.ExecuteReader();
-                           if (reader.HasRows)
-                           {
-                               while (reader.Read())
-                               {
-                                   Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetInt32(5));
-                               }
+                        cmd.CommandText = "SELECT * FROM EMPLOYEE_VIEW";
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4));
+                            }
 
-                           }
+                        }
 
-                           reader.Close();
+                        reader.Close();
 
-                           //Otro menu
-                           Console.WriteLine("Que desas hacer? 1. Crear nuevo registro (C), 2. Actualizar nuevo registro (U) 3. Eliminar registro (D)");
-                           var crudAnswer = Console.ReadLine();
+                        //Otro menu
+                        Console.WriteLine("Que desas hacer? 1. Crear nuevo registro (C), 2. Actualizar nuevo registro (U) 3. Eliminar registro (D)");
+                        var crudAnswer = Console.ReadLine();
 
-                           //Entrada de datos
+                        //Entrada de datos
 
 
 
-                           Console.WriteLine("Desea continuar? (Y/n) ");
-                           var secondMenuAnswer = Console.ReadLine();
+                        Console.WriteLine("Desea continuar? (Y/n) ");
+                        var secondMenuAnswer = Console.ReadLine();
 
-                           if (secondMenuAnswer == "Y")
-                           {
-                               continuarSecondMenu = true;
-                           }
-                           else if (secondMenuAnswer == "n")
-                           {
-                               continuarSecondMenu = false;
-                           }
-                           else
-                           {
-                               Console.WriteLine("Letra equivocada");
-                               continuarSecondMenu = false;
-                           }
-                       }
-                    
+                        if (secondMenuAnswer == "Y")
+                        {
+                            continuarSecondMenu = true;
+                        }
+                        else if (secondMenuAnswer == "n")
+                        {
+                            continuarSecondMenu = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Letra equivocada");
+                            continuarSecondMenu = false;
+                        }
+                    }
+
 
                 }
 
                 else if (numberAnswer == 3)
                 {
-                     bool continuarSecondMenu = true;
-                       while (continuarSecondMenu) {
+                    bool continuarSecondMenu = true;
+                    while (continuarSecondMenu)
+                    {
 
-                           Console.WriteLine("CLIENTES");
-                           SqlCommand cmd = connection.CreateCommand();
+                        Console.WriteLine("CLIENTES");
+                        SqlCommand cmd = connection.CreateCommand();
 
-                           cmd.CommandText = "SELECT * FROM CUSTOMER";
-                           SqlDataReader reader = cmd.ExecuteReader();
-                           if (reader.HasRows)
-                           {
-                               while (reader.Read())
-                               {
-                                   Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetInt32(5));
-                               }
+                        cmd.CommandText = "SELECT * FROM CUSTOMER_VIEW";
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4));
+                            }
 
-                           }
+                        }
 
-                           reader.Close();
+                        reader.Close();
 
-                           //Otro menu
-                           Console.WriteLine("Que desas hacer? 1. Crear nuevo registro (C), 2. Actualizar nuevo registro (U) 3. Eliminar registro (D)");
-                           var crudAnswer = Console.ReadLine();
+                        //Otro menu
+                        Console.WriteLine("Que desas hacer? 1. Crear nuevo registro (C), 2. Actualizar nuevo registro (U) 3. Eliminar registro (D)");
+                        var crudAnswer = Console.ReadLine();
 
-                           //Entrada de datos
+                        //Entrada de datos
 
 
 
-                           Console.WriteLine("Desea continuar? (Y/n) ");
-                           var secondMenuAnswer = Console.ReadLine();
+                        Console.WriteLine("Desea continuar? (Y/n) ");
+                        var secondMenuAnswer = Console.ReadLine();
 
-                           if (secondMenuAnswer == "Y")
-                           {
-                               continuarSecondMenu = true;
-                           }
-                           else if (secondMenuAnswer == "n")
-                           {
-                               continuarSecondMenu = false;
-                           }
-                           else
-                           {
-                               Console.WriteLine("Letra equivocada");
-                               continuarSecondMenu = false;
-                           }
-                       }
+                        if (secondMenuAnswer == "Y")
+                        {
+                            continuarSecondMenu = true;
+                        }
+                        else if (secondMenuAnswer == "n")
+                        {
+                            continuarSecondMenu = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Letra equivocada");
+                            continuarSecondMenu = false;
+                        }
+                    }
                 }
                 else if (numberAnswer == 4)
                 {
-                     bool continuarSecondMenu = true;
-                       while (continuarSecondMenu) {
+                    bool continuarSecondMenu = true;
+                    while (continuarSecondMenu)
+                    {
 
-                           Console.WriteLine("CATEGORIA");
-                           SqlCommand cmd = connection.CreateCommand();
+                        Console.WriteLine("CATEGORIA");
+                        SqlCommand cmd = connection.CreateCommand();
 
-                           cmd.CommandText = "SELECT * FROM CATEGORY";
-                           SqlDataReader reader = cmd.ExecuteReader();
-                           if (reader.HasRows)
-                           {
-                               while (reader.Read())
-                               {
-                                   Console.WriteLine("{0}\t{1}\t{2}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
-                               }
+                        cmd.CommandText = "SELECT * FROM CATEGORY";
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                Console.WriteLine("{0}\t{1}\t{2}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+                            }
 
-                           }
+                        }
 
-                           reader.Close();
+                        reader.Close();
 
-                           //Otro menu
-                           Console.WriteLine("Que desas hacer? 1. Crear nuevo registro (C), 2. Actualizar nuevo registro (U) 3. Eliminar registro (D)");
-                           var crudAnswer = Console.ReadLine();
+                        //Otro menu
+                        Console.WriteLine("Que desas hacer? 1. Crear nuevo registro (C), 2. Actualizar nuevo registro (U) 3. Eliminar registro (D)");
+                        var crudAnswer = Console.ReadLine();
 
-                           //Entrada de datos
+                        //Entrada de datos
 
 
 
-                           Console.WriteLine("Desea continuar? (Y/n) ");
-                           var secondMenuAnswer = Console.ReadLine();
+                        Console.WriteLine("Desea continuar? (Y/n) ");
+                        var secondMenuAnswer = Console.ReadLine();
 
-                           if (secondMenuAnswer == "Y")
-                           {
-                               continuarSecondMenu = true;
-                           }
-                           else if (secondMenuAnswer == "n")
-                           {
-                               continuarSecondMenu = false;
-                           }
-                           else
-                           {
-                               Console.WriteLine("Letra equivocada");
-                               continuarSecondMenu = false;
-                           }
-                       }
+                        if (secondMenuAnswer == "Y")
+                        {
+                            continuarSecondMenu = true;
+                        }
+                        else if (secondMenuAnswer == "n")
+                        {
+                            continuarSecondMenu = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Letra equivocada");
+                            continuarSecondMenu = false;
+                        }
+                    }
                 }
                 else if (numberAnswer == 5)
                 {
-                     bool continuarSecondMenu = true;
-                       while (continuarSecondMenu) {
+                    bool continuarSecondMenu = true;
+                    while (continuarSecondMenu)
+                    {
 
-                           Console.WriteLine("LOCALIDADES");
-                           SqlCommand cmd = connection.CreateCommand();
+                        Console.WriteLine("LOCALIDADES");
+                        SqlCommand cmd = connection.CreateCommand();
 
-                           cmd.CommandText = "SELECT * FROM LOCATION_TABLE";
-                           SqlDataReader reader = cmd.ExecuteReader();
-                           if (reader.HasRows)
-                           {
-                               while (reader.Read())
-                               {
-                                   Console.WriteLine("{0}\t{1}\t{2}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
-                               }
+                        cmd.CommandText = "SELECT * FROM LOCATION_TABLE";
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                Console.WriteLine("{0}\t{1}\t{2}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+                            }
 
-                           }
+                        }
 
-                           reader.Close();
+                        reader.Close();
 
-                           //Otro menu
-                           Console.WriteLine("Que desas hacer? 1. Crear nuevo registro (C), 2. Actualizar nuevo registro (U) 3. Eliminar registro (D)");
-                           var crudAnswer = Console.ReadLine();
+                        //Otro menu
+                        Console.WriteLine("Que desas hacer? 1. Crear nuevo registro (C), 2. Actualizar nuevo registro (U) 3. Eliminar registro (D)");
+                        var crudAnswer = Console.ReadLine();
 
-                           //Entrada de datos
+                        //Entrada de datos
 
 
 
-                           Console.WriteLine("Desea continuar? (Y/n) ");
-                           var secondMenuAnswer = Console.ReadLine();
+                        Console.WriteLine("Desea continuar? (Y/n) ");
+                        var secondMenuAnswer = Console.ReadLine();
 
-                           if (secondMenuAnswer == "Y")
-                           {
-                               continuarSecondMenu = true;
-                           }
-                           else if (secondMenuAnswer == "n")
-                           {
-                               continuarSecondMenu = false;
-                           }
-                           else
-                           {
-                               Console.WriteLine("Letra equivocada");
-                               continuarSecondMenu = false;
-                           }
-                       }
+                        if (secondMenuAnswer == "Y")
+                        {
+                            continuarSecondMenu = true;
+                        }
+                        else if (secondMenuAnswer == "n")
+                        {
+                            continuarSecondMenu = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Letra equivocada");
+                            continuarSecondMenu = false;
+                        }
+                    }
                 }
                 else if (numberAnswer == 6)
                 {
-                     bool continuarSecondMenu = true;
-                       while (continuarSecondMenu) {
+                    bool continuarSecondMenu = true;
+                    while (continuarSecondMenu)
+                    {
 
-                           Console.WriteLine("PRODUCTOS");
-                           SqlCommand cmd = connection.CreateCommand();
+                        Console.WriteLine("PRODUCTOS");
+                        SqlCommand cmd = connection.CreateCommand();
 
-                           cmd.CommandText = "SELECT * FROM PRODUCT";
-                           SqlDataReader reader = cmd.ExecuteReader();
-                           if (reader.HasRows)
-                           {
-                               while (reader.Read())
-                               {
-                                   Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetFloat(4), reader.GetInt32(5), reader.GetInt32(6));
-                               }
+                        cmd.CommandText = "SELECT * FROM PRODUCT_VIEW";
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if(reader.HasRows){
+                            while(reader.Read()){
+                                Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetString(5), reader.GetString(6));
+                            }
+                        }
 
-                           }
-
-                           reader.Close();
+                        reader.Close();
 
 
-                           //Otro menu
-                           Console.WriteLine("Que desas hacer? 1. Crear nuevo registro (C), 2. Actualizar nuevo registro (U) 3. Eliminar registro (D)");
-                           var crudAnswer = Console.ReadLine();
+                        //Otro menu
+                        Console.WriteLine("Que desas hacer? 1. Crear nuevo registro (C), 2. Actualizar nuevo registro (U) 3. Eliminar registro (D)");
+                        var crudAnswer = Console.ReadLine();
 
-                           //Entrada de datos
+                        //Entrada de datos
 
 
 
-                           Console.WriteLine("Desea continuar? (Y/n) ");
-                           var secondMenuAnswer = Console.ReadLine();
+                        Console.WriteLine("Desea continuar? (Y/n) ");
+                        var secondMenuAnswer = Console.ReadLine();
 
-                           if (secondMenuAnswer == "Y")
-                           {
-                               continuarSecondMenu = true;
-                           }
-                           else if (secondMenuAnswer == "n")
-                           {
-                               continuarSecondMenu = false;
-                           }
-                           else
-                           {
-                               Console.WriteLine("Letra equivocada");
-                               continuarSecondMenu = false;
-                           }
-                       }
-                    
+                        if (secondMenuAnswer == "Y")
+                        {
+                            continuarSecondMenu = true;
+                        }
+                        else if (secondMenuAnswer == "n")
+                        {
+                            continuarSecondMenu = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Letra equivocada");
+                            continuarSecondMenu = false;
+                        }
+                    }
+
 
                 }
                 else if (numberAnswer == 7)
                 {
-                   
-                      bool continuarSecondMenu = true;
-                       while (continuarSecondMenu) {
 
-                           Console.WriteLine("SUPLIDORES");
-                           SqlCommand cmd = connection.CreateCommand();
+                    bool continuarSecondMenu = true;
+                    while (continuarSecondMenu)
+                    {
 
-                           cmd.CommandText = "SELECT * FROM SUPPLIER";
-                           SqlDataReader reader = cmd.ExecuteReader();
-                           if (reader.HasRows)
-                           {
-                               while (reader.Read())
-                               {
-                                   Console.WriteLine("{0}\t{1}\t{2}\t{3}", reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetString(4));
-                               }
+                        Console.WriteLine("SUPLIDORES");
+                        SqlCommand cmd = connection.CreateCommand();
 
-                           }
+                        cmd.CommandText = "SELECT * FROM SUPPLIER_VIEW";
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                Console.WriteLine("{0}\t{1}\t{2}\t{3}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
+                            }
 
-                           reader.Close();
+                        }
 
-                           //Otro menu
-                           Console.WriteLine("Que desas hacer? 1. Crear nuevo registro (C), 2. Actualizar nuevo registro (U) 3. Eliminar registro (D)");
-                           var crudAnswer = Console.ReadLine();
+                        reader.Close();
 
-                           //Entrada de datos
+                        //Otro menu
+                        Console.WriteLine("Que desas hacer? 1. Crear nuevo registro (C), 2. Actualizar nuevo registro (U) 3. Eliminar registro (D)");
+                        var crudAnswer = Console.ReadLine();
+
+                        //Entrada de datos
 
 
 
-                           Console.WriteLine("Desea continuar? (Y/n) ");
-                           var secondMenuAnswer = Console.ReadLine();
+                        Console.WriteLine("Desea continuar? (Y/n) ");
+                        var secondMenuAnswer = Console.ReadLine();
 
-                           if (secondMenuAnswer == "Y")
-                           {
-                               continuarSecondMenu = true;
-                           }
-                           else if (secondMenuAnswer == "n")
-                           {
-                               continuarSecondMenu = false;
-                           }
-                           else
-                           {
-                               Console.WriteLine("Letra equivocada");
-                               continuarSecondMenu = false;
-                           }
-                       }
-                    
+                        if (secondMenuAnswer == "Y")
+                        {
+                            continuarSecondMenu = true;
+                        }
+                        else if (secondMenuAnswer == "n")
+                        {
+                            continuarSecondMenu = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Letra equivocada");
+                            continuarSecondMenu = false;
+                        }
+                    }
+
 
                 }
 
-                else {
+                else
+                {
                     Console.WriteLine("Mmm al parecer tu seleccion no se encuentra en el menu");
                 }
 
