@@ -39,7 +39,7 @@ namespace Inventory
                         {
                             while (reader.Read())
                             {
-                                Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetDateTime(4));
+                                Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetDateTime(4), reader.GetInt32(5));
                             }
 
                         }
@@ -67,9 +67,11 @@ namespace Inventory
                             Console.WriteLine("Ingresa id de cliente");
                             var ID_CUSTOMER = Console.ReadLine();
 
-                            Console.WriteLine("Ingresa la fecha de compra en el siguiente formato solamente AAAA-MM-DD  ");
+                            Console.WriteLine("Ingresa la fecha actual en el formato solamente AAAA-MM-DD  ");
                             var PURCHASE_DATE = Console.ReadLine();
 
+                            Console.WriteLine("Ingresa la cantidad de productos a comprar ");
+                            var QTY_PRODUCT = Console.ReadLine();
 
 
 
@@ -80,6 +82,7 @@ namespace Inventory
                                 var EMPLOYEE = int.Parse(ID_EMPLOYEE);
                                 var CUSTOMER = int.Parse(ID_CUSTOMER);
                                 var DATE = DateTime.Parse(PURCHASE_DATE);
+                                var CANT_PRODUCT = int.Parse(QTY_PRODUCT);
 
                                 //modo medio automatico
 
@@ -89,6 +92,7 @@ namespace Inventory
                                 cmd.Parameters.AddWithValue("@ID_EMPLOYEE", EMPLOYEE);
                                 cmd.Parameters.AddWithValue("@ID_CUSTOMER", CUSTOMER);
                                 cmd.Parameters.AddWithValue("@PURCHASE_DATE", DATE);
+                                cmd.Parameters.AddWithValue("@QTY_PRODUCT", CANT_PRODUCT);
                                 Console.WriteLine("Datos ingresados");
 
                                 //Muy importante 
@@ -97,7 +101,7 @@ namespace Inventory
 
 
                         }
-                        else if (respuesta == "U" || respuesta == "U")
+                        else if (respuesta == "U" || respuesta == "u")
                         {
                             Console.WriteLine("Actualizar usuario");
                             Console.WriteLine("Por favor, ingresa tu ID");
@@ -256,7 +260,7 @@ namespace Inventory
 
 
                         }
-                        else if (respuesta == "U" || respuesta == "U")
+                        else if (respuesta == "U" || respuesta == "u")
                         {
                             Console.WriteLine("Actualizar usuario");
                             Console.WriteLine("Por favor, ingresa tu ID");
@@ -413,7 +417,7 @@ namespace Inventory
 
 
                         }
-                        else if (respuesta == "U" || respuesta == "U")
+                        else if (respuesta == "U" || respuesta == "u")
                         {
                             Console.WriteLine("Actualizar usuario");
                             Console.WriteLine("Por favor, ingresa tu ID");
@@ -551,7 +555,7 @@ namespace Inventory
 
 
                         }
-                        else if (respuesta == "U" || respuesta == "U")
+                        else if (respuesta == "U" || respuesta == "u")
                         {
                             Console.WriteLine("Actualizar usuario");
                             Console.WriteLine("Por favor, ingresa ID");
@@ -678,7 +682,7 @@ namespace Inventory
 
 
                         }
-                        else if (respuesta == "U" || respuesta == "U")
+                        else if (respuesta == "U" || respuesta == "u")
                         {
                             Console.WriteLine("Actualizar ubicacion");
                             Console.WriteLine("Por favor, ingresa ID");
@@ -828,7 +832,7 @@ namespace Inventory
 
 
                         }
-                        else if (respuesta == "U" || respuesta == "U")
+                        else if (respuesta == "U" || respuesta == "u")
                         {
                             Console.WriteLine("Actualizar usuario");
                             Console.WriteLine("Por favor, ingresa tu ID");
@@ -990,7 +994,7 @@ namespace Inventory
 
 
                         }
-                        else if (respuesta == "U" || respuesta == "U")
+                        else if (respuesta == "U" || respuesta == "u")
                         {
                             Console.WriteLine("Actualizar usuario");
                             Console.WriteLine("Por favor, ingresa tu ID");
